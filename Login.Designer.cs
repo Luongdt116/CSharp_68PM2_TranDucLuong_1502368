@@ -1,6 +1,6 @@
 ﻿namespace QLSinhVien
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             this.txtPassword.Size = new System.Drawing.Size(211, 22);
             this.txtPassword.TabIndex = 5;
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +103,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
