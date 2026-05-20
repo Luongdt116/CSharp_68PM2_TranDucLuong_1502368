@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLSinhVien
 {
-    public partial class Login : Form
+    public partial class frm_login : Form
     {
-        public Login()
+        public frm_login()
         {
             InitializeComponent();
         }
@@ -34,9 +34,6 @@ namespace QLSinhVien
             if (username == "1502368@st.huce.edu.vn" && password == "1502368")
             {
                 MessageBox.Show("Đăng nhập thành công.");
-                Form AddSinhVien = new AddSinhVien();
-                AddSinhVien.Show();
-                this.Hide();
             }
             else
             {

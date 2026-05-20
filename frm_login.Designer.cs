@@ -1,6 +1,6 @@
 ﻿namespace QLSinhVien
 {
-    partial class Login
+    partial class frm_login
     {
         /// <summary>
         /// Required designer variable.
