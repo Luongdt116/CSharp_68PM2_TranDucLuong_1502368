@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSinhVien" Class="dbQLSV" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DELL_INSPIRON15\SQLEXPRESS;Initial Catalog=QLSinhVien;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="QLSinhVien.Properties.Settings" SettingsPropertyName="QLSinhVienConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_lophocs" Member="tbl_lophocs">
+    <Type Name="tbl_lophoc">
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLop" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MaKhoa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_lophoc_tbl_sinhvien" Member="tbl_sinhviens" ThisKey="MaLop" OtherKey="MaLop" Type="tbl_sinhvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_sinhviens" Member="tbl_sinhviens">
+    <Type Name="tbl_sinhvien">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="tbl_lophoc_tbl_sinhvien" Member="tbl_lophoc" ThisKey="MaLop" OtherKey="MaLop" Type="tbl_lophoc" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
