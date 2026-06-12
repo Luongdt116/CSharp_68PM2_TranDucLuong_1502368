@@ -39,9 +39,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dgv_DSSV = new System.Windows.Forms.DataGridView();
+            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.btnSuasv = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.grb1 = new System.Windows.Forms.GroupBox();
             this.cboLop = new System.Windows.Forms.ComboBox();
@@ -56,11 +61,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.qLSinhVienDataSet = new QLSinhVien.QLSinhVienDataSet();
             this.qLSinhVienDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pn_qlsv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSSV)).BeginInit();
             this.grb1.SuspendLayout();
@@ -81,7 +81,7 @@
             this.pn_qlsv.Controls.Add(this.dgv_DSSV);
             this.pn_qlsv.Controls.Add(this.btnLamMoi);
             this.pn_qlsv.Controls.Add(this.btnXoa);
-            this.pn_qlsv.Controls.Add(this.btnSua);
+            this.pn_qlsv.Controls.Add(this.btnSuasv);
             this.pn_qlsv.Controls.Add(this.btnThem);
             this.pn_qlsv.Controls.Add(this.grb1);
             this.pn_qlsv.Location = new System.Drawing.Point(10, 16);
@@ -183,6 +183,50 @@
             this.dgv_DSSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgv_DSSV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // MaSV
+            // 
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.HeaderText = "Mã SV";
+            this.MaSV.MinimumWidth = 6;
+            this.MaSV.Name = "MaSV";
+            this.MaSV.ReadOnly = true;
+            this.MaSV.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ và Tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 125;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.MinimumWidth = 6;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            this.GioiTinh.Width = 125;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.Width = 125;
+            // 
+            // MaLop
+            // 
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Mã Lớp";
+            this.MaLop.MinimumWidth = 6;
+            this.MaLop.Name = "MaLop";
+            this.MaLop.Width = 125;
+            // 
             // btnLamMoi
             // 
             this.btnLamMoi.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -206,17 +250,17 @@
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnSua
+            // btnSuasv
             // 
-            this.btnSua.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnSua.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSua.Location = new System.Drawing.Point(222, 522);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(163, 51);
-            this.btnSua.TabIndex = 27;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnSuasv.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSuasv.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSuasv.Location = new System.Drawing.Point(222, 522);
+            this.btnSuasv.Name = "btnSuasv";
+            this.btnSuasv.Size = new System.Drawing.Size(163, 51);
+            this.btnSuasv.TabIndex = 27;
+            this.btnSuasv.Text = "Sửa";
+            this.btnSuasv.UseVisualStyleBackColor = false;
+            this.btnSuasv.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -368,50 +412,6 @@
             this.qLSinhVienDataSetBindingSource.DataSource = this.qLSinhVienDataSet;
             this.qLSinhVienDataSetBindingSource.Position = 0;
             // 
-            // MaSV
-            // 
-            this.MaSV.DataPropertyName = "MaSV";
-            this.MaSV.HeaderText = "Mã SV";
-            this.MaSV.MinimumWidth = 6;
-            this.MaSV.Name = "MaSV";
-            this.MaSV.ReadOnly = true;
-            this.MaSV.Width = 125;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Họ và Tên";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.ReadOnly = true;
-            this.HoTen.Width = 125;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới Tính";
-            this.GioiTinh.MinimumWidth = 6;
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.ReadOnly = true;
-            this.GioiTinh.Width = 125;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.MinimumWidth = 6;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            this.NgaySinh.Width = 125;
-            // 
-            // MaLop
-            // 
-            this.MaLop.DataPropertyName = "MaLop";
-            this.MaLop.HeaderText = "Mã Lớp";
-            this.MaLop.MinimumWidth = 6;
-            this.MaLop.Name = "MaLop";
-            this.MaLop.Width = 125;
-            // 
             // UCQLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -442,7 +442,7 @@
         private System.Windows.Forms.DataGridView dgv_DSSV;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnSuasv;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grb1;
         private System.Windows.Forms.ComboBox cboLop;

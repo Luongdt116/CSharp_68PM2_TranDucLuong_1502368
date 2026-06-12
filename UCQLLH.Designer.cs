@@ -55,7 +55,7 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.btnSuasv = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.pm_qllh.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -78,7 +78,7 @@
             this.pm_qllh.Controls.Add(this.btnTimKiem);
             this.pm_qllh.Controls.Add(this.label7);
             this.pm_qllh.Controls.Add(this.label8);
-            this.pm_qllh.Controls.Add(this.btnSua);
+            this.pm_qllh.Controls.Add(this.btnSuasv);
             this.pm_qllh.Controls.Add(this.btnThem);
             this.pm_qllh.Location = new System.Drawing.Point(15, 31);
             this.pm_qllh.Name = "pm_qllh";
@@ -333,17 +333,18 @@
             this.label8.TabIndex = 75;
             this.label8.Text = "Trang 1/1 | 3 bản ghi";
             // 
-            // btnSua
+            // btnSuasv
             // 
-            this.btnSua.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnSua.Location = new System.Drawing.Point(213, 443);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(177, 49);
-            this.btnSua.TabIndex = 64;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSuasv.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnSuasv.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuasv.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnSuasv.Location = new System.Drawing.Point(213, 443);
+            this.btnSuasv.Name = "btnSuasv";
+            this.btnSuasv.Size = new System.Drawing.Size(177, 49);
+            this.btnSuasv.TabIndex = 64;
+            this.btnSuasv.Text = "Sửa";
+            this.btnSuasv.UseVisualStyleBackColor = false;
+            this.btnSuasv.Click += new System.EventHandler(this.btnSuasv_Click);
             // 
             // btnThem
             // 
@@ -404,7 +405,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnSuasv;
         private System.Windows.Forms.Button btnThem;
     }
 }

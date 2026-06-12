@@ -46,5 +46,10 @@ namespace QLSinhVien
         {
 
         }
+
+        private void btnSuasv_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
