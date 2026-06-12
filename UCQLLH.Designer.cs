@@ -38,7 +38,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnXemdssv = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -46,8 +46,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -55,8 +55,8 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.pm_qllh.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,11 +66,11 @@
             // pm_qllh
             // 
             this.pm_qllh.Controls.Add(this.groupBox1);
-            this.pm_qllh.Controls.Add(this.button10);
+            this.pm_qllh.Controls.Add(this.btnXemdssv);
             this.pm_qllh.Controls.Add(this.button9);
             this.pm_qllh.Controls.Add(this.panel1);
-            this.pm_qllh.Controls.Add(this.button4);
-            this.pm_qllh.Controls.Add(this.button3);
+            this.pm_qllh.Controls.Add(this.btnLamMoi);
+            this.pm_qllh.Controls.Add(this.btnXoa);
             this.pm_qllh.Controls.Add(this.button8);
             this.pm_qllh.Controls.Add(this.button7);
             this.pm_qllh.Controls.Add(this.button6);
@@ -78,8 +78,8 @@
             this.pm_qllh.Controls.Add(this.btnTimKiem);
             this.pm_qllh.Controls.Add(this.label7);
             this.pm_qllh.Controls.Add(this.label8);
-            this.pm_qllh.Controls.Add(this.button2);
-            this.pm_qllh.Controls.Add(this.button1);
+            this.pm_qllh.Controls.Add(this.btnSua);
+            this.pm_qllh.Controls.Add(this.btnThem);
             this.pm_qllh.Location = new System.Drawing.Point(15, 31);
             this.pm_qllh.Name = "pm_qllh";
             this.pm_qllh.Size = new System.Drawing.Size(1182, 686);
@@ -174,17 +174,17 @@
             this.textBox5.Size = new System.Drawing.Size(350, 22);
             this.textBox5.TabIndex = 21;
             // 
-            // button10
+            // btnXemdssv
             // 
-            this.button10.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button10.Location = new System.Drawing.Point(20, 572);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(370, 49);
-            this.button10.TabIndex = 76;
-            this.button10.Text = "Xem danh sách sinh viên";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnXemdssv.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnXemdssv.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemdssv.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnXemdssv.Location = new System.Drawing.Point(20, 572);
+            this.btnXemdssv.Name = "btnXemdssv";
+            this.btnXemdssv.Size = new System.Drawing.Size(370, 49);
+            this.btnXemdssv.TabIndex = 76;
+            this.btnXemdssv.Text = "Xem danh sách sinh viên";
+            this.btnXemdssv.UseVisualStyleBackColor = false;
             // 
             // button9
             // 
@@ -244,29 +244,29 @@
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             // 
-            // button4
+            // btnLamMoi
             // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button4.Location = new System.Drawing.Point(213, 498);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 49);
-            this.button4.TabIndex = 66;
-            this.button4.Text = "Làm mới";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnLamMoi.BackColor = System.Drawing.Color.Silver;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnLamMoi.Location = new System.Drawing.Point(213, 498);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(177, 49);
+            this.btnLamMoi.TabIndex = 66;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnXoa
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button3.Location = new System.Drawing.Point(20, 498);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 49);
-            this.button3.TabIndex = 65;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnXoa.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnXoa.Location = new System.Drawing.Point(20, 498);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(177, 49);
+            this.btnXoa.TabIndex = 65;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
@@ -333,29 +333,29 @@
             this.label8.TabIndex = 75;
             this.label8.Text = "Trang 1/1 | 3 bản ghi";
             // 
-            // button2
+            // btnSua
             // 
-            this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button2.Location = new System.Drawing.Point(213, 443);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 49);
-            this.button2.TabIndex = 64;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSua.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnSua.Location = new System.Drawing.Point(213, 443);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(177, 49);
+            this.btnSua.TabIndex = 64;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button1.Location = new System.Drawing.Point(20, 443);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 49);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnThem.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnThem.Location = new System.Drawing.Point(20, 443);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(177, 49);
+            this.btnThem.TabIndex = 63;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
             // 
             // UCQLLH
             // 
@@ -387,7 +387,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnXemdssv;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -395,8 +395,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
@@ -404,7 +404,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
     }
 }

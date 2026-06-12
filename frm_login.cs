@@ -33,6 +33,9 @@ namespace QLSinhVien
             string password = txtPassword.Text;
             if (username == "1502368@st.huce.edu.vn" && password == "1502368")
             {
+                frm_main Frm_main = new frm_main();
+                this.Hide();
+                Frm_main.ShowDialog();
                 MessageBox.Show("Đăng nhập thành công.");
             }
             else
