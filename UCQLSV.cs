@@ -97,7 +97,7 @@ namespace QLSinhVien
             // Kiểm tra xem đã chọn sinh viên chưa
             if (string.IsNullOrEmpty(txtMaSV.Text))
             {
-                MessageBox.Show("Vui lòng click chọn sinh viên cần sửa từ danh sách!");
+                MessageBox.Show("Vui lòng click chọn sinh viên cần sửa từ danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -115,12 +115,12 @@ namespace QLSinhVien
                     sv.MaLop = cboLop.SelectedValue.ToString();
 
                     db.SubmitChanges();
-                    MessageBox.Show("Cập nhật thông tin thành công!");
+                    MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy sinh viên này trong CSDL!");
+                    MessageBox.Show("Không tìm thấy sinh viên này trong CSDL!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
