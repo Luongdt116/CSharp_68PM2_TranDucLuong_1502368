@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses">
-  <DataContextMoniker Name="/dbQLSV" />
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
   <nestedChildShapes>
-    <classShape Id="51cbd858-30c0-47bf-a264-be59c12de692" absoluteBounds="2.625, 1.25, 2, 1.3862939453125">
-      <DataClassMoniker Name="/dbQLSV/tbl_lophoc" />
+    <classShape Id="920a4d15-de9a-41a0-9492-1b326276ee72" absoluteBounds="1.375, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/tbl_lophoc" />
       <nestedChildShapes>
-        <elementListCompartment Id="dffbd233-7f69-412d-8096-8e10994a7dbe" absoluteBounds="2.64, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="69dc2a05-687c-44af-80cf-76b50176cd19" absoluteBounds="1.3900000000000001, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="194846fe-aaea-4520-bc4f-b3d421cf50a1" absoluteBounds="2.5, 3.375, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/dbQLSV/tbl_sinhvien" />
+    <classShape Id="0a2a5625-6050-49ce-b954-d6ff19c1c585" absoluteBounds="4.5, 1.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClasses1DataContext/tbl_sinhvien" />
       <nestedChildShapes>
-        <elementListCompartment Id="806849c3-239c-464a-b4ba-27fb76402e4f" absoluteBounds="2.515, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b934245a-76f4-4f31-9dfa-ecc61e77153e" absoluteBounds="4.515, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.5625 : 2.6362939453125); (3.5625 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/dbQLSV/tbl_lophoc/tbl_lophoc_tbl_sinhvien" />
+    <associationConnector edgePoints="[(3.375 : 2.22679768880208); (4.5 : 2.22679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/tbl_lophoc/tbl_lophoc_tbl_sinhvien" />
       <nodes>
-        <classShapeMoniker Id="51cbd858-30c0-47bf-a264-be59c12de692" />
-        <classShapeMoniker Id="194846fe-aaea-4520-bc4f-b3d421cf50a1" />
+        <classShapeMoniker Id="920a4d15-de9a-41a0-9492-1b326276ee72" />
+        <classShapeMoniker Id="0a2a5625-6050-49ce-b954-d6ff19c1c585" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

@@ -23,7 +23,7 @@ namespace QLSinhVien
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLSinhVien")]
-	public partial class dbQLSV : System.Data.Linq.DataContext
+	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -38,31 +38,31 @@ namespace QLSinhVien
     partial void Deletetbl_sinhvien(tbl_sinhvien instance);
     #endregion
 		
-		public dbQLSV() : 
+		public DataClasses1DataContext() : 
 				base(global::QLSinhVien.Properties.Settings.Default.QLSinhVienConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbQLSV(string connection) : 
+		public DataClasses1DataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbQLSV(System.Data.IDbConnection connection) : 
+		public DataClasses1DataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbQLSV(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClasses1DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbQLSV(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClasses1DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -91,11 +91,13 @@ namespace QLSinhVien
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private string _ID;
+		
 		private string _MaLop;
 		
 		private string _TenLop;
 		
-		private string _MaKhoa;
+		private string _GhiChu;
 		
 		private EntitySet<tbl_sinhvien> _tbl_sinhviens;
 		
@@ -103,12 +105,14 @@ namespace QLSinhVien
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnIDChanging(string value);
+    partial void OnIDChanged();
     partial void OnMaLopChanging(string value);
     partial void OnMaLopChanged();
     partial void OnTenLopChanging(string value);
     partial void OnTenLopChanged();
-    partial void OnMaKhoaChanging(string value);
-    partial void OnMaKhoaChanged();
+    partial void OnGhiChuChanging(string value);
+    partial void OnGhiChuChanged();
     #endregion
 		
 		public tbl_lophoc()
@@ -117,7 +121,27 @@ namespace QLSinhVien
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string MaLop
 		{
 			get
@@ -157,22 +181,22 @@ namespace QLSinhVien
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhoa", DbType="VarChar(50)")]
-		public string MaKhoa
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(100)")]
+		public string GhiChu
 		{
 			get
 			{
-				return this._MaKhoa;
+				return this._GhiChu;
 			}
 			set
 			{
-				if ((this._MaKhoa != value))
+				if ((this._GhiChu != value))
 				{
-					this.OnMaKhoaChanging(value);
+					this.OnGhiChuChanging(value);
 					this.SendPropertyChanging();
-					this._MaKhoa = value;
-					this.SendPropertyChanged("MaKhoa");
-					this.OnMaKhoaChanged();
+					this._GhiChu = value;
+					this.SendPropertyChanged("GhiChu");
+					this.OnGhiChuChanged();
 				}
 			}
 		}
@@ -235,9 +259,9 @@ namespace QLSinhVien
 		
 		private System.Nullable<System.DateTime> _NgaySinh;
 		
-		private string _MaLop;
-		
 		private string _GioiTinh;
+		
+		private string _MaLop;
 		
 		private EntityRef<tbl_lophoc> _tbl_lophoc;
 		
@@ -251,10 +275,10 @@ namespace QLSinhVien
     partial void OnHoTenChanged();
     partial void OnNgaySinhChanging(System.Nullable<System.DateTime> value);
     partial void OnNgaySinhChanged();
-    partial void OnMaLopChanging(string value);
-    partial void OnMaLopChanged();
     partial void OnGioiTinhChanging(string value);
     partial void OnGioiTinhChanged();
+    partial void OnMaLopChanging(string value);
+    partial void OnMaLopChanged();
     #endregion
 		
 		public tbl_sinhvien()
@@ -323,6 +347,26 @@ namespace QLSinhVien
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioiTinh", DbType="NVarChar(10)")]
+		public string GioiTinh
+		{
+			get
+			{
+				return this._GioiTinh;
+			}
+			set
+			{
+				if ((this._GioiTinh != value))
+				{
+					this.OnGioiTinhChanging(value);
+					this.SendPropertyChanging();
+					this._GioiTinh = value;
+					this.SendPropertyChanged("GioiTinh");
+					this.OnGioiTinhChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="VarChar(50)")]
 		public string MaLop
 		{
@@ -343,26 +387,6 @@ namespace QLSinhVien
 					this._MaLop = value;
 					this.SendPropertyChanged("MaLop");
 					this.OnMaLopChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioiTinh", DbType="NVarChar(10)")]
-		public string GioiTinh
-		{
-			get
-			{
-				return this._GioiTinh;
-			}
-			set
-			{
-				if ((this._GioiTinh != value))
-				{
-					this.OnGioiTinhChanging(value);
-					this.SendPropertyChanging();
-					this._GioiTinh = value;
-					this.SendPropertyChanged("GioiTinh");
-					this.OnGioiTinhChanged();
 				}
 			}
 		}

@@ -13,6 +13,13 @@ namespace QLSinhVien
     public partial class UCQLSV : UserControl
     {
         dbQLSV db = new dbQLSV();
+
+        int pageSize = 2; 
+        int currentPage = 1; 
+        int totalPages = 0; 
+        int totalRecords = 0; 
+        string currentSearchKeyword = ""; 
+
         public UCQLSV()
         {
             InitializeComponent();
@@ -51,20 +58,73 @@ namespace QLSinhVien
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tbl_sinhvien sv = new tbl_sinhvien();
-            sv.MaSV = txtMaSV.Text;
-            sv.HoTen = txtHoTen.Text;
-            sv.NgaySinh = DateTime.Parse(dtpNgaySinh.Text);
-            sv.GioiTinh = cboGioiTinh.Text;
-            sv.MaLop = cboLop.SelectedValue.ToString();
-            db.tbl_sinhviens.InsertOnSubmit(sv);
-            db.SubmitChanges();
-            LoadData();
+            if (string.IsNullOrEmpty(txtMaSV.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập Mã sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                string maSV = txtMaSV.Text.Trim();
+                var checkSV = db.tbl_sinhviens.FirstOrDefault(x => x.MaSV == maSV);
+
+                if (checkSV != null)
+                {
+                    MessageBox.Show("Mã sinh viên này đã tồn tại! Vui lòng nhập mã khác.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                tbl_sinhvien sv = new tbl_sinhvien();
+                sv.MaSV = maSV;
+                sv.HoTen = txtHoTen.Text.Trim();
+                sv.NgaySinh = dtpNgaySinh.Value; 
+                sv.GioiTinh = cboGioiTinh.Text;
+                sv.MaLop = cboLop.SelectedValue?.ToString();
+
+                db.tbl_sinhviens.InsertOnSubmit(sv);
+                db.SubmitChanges();
+
+                MessageBox.Show("Thêm sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi thêm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void LoadData()
         {
-            List<tbl_sinhvien> dsSV = db.tbl_sinhviens.ToList();
-            dgv_DSSV.DataSource = dsSV;
+            try
+            {
+                var query = db.tbl_sinhviens.AsQueryable();
+
+                if (!string.IsNullOrEmpty(currentSearchKeyword))
+                {
+                    query = query.Where(x => x.MaSV.Contains(currentSearchKeyword) ||
+                                             x.HoTen.Contains(currentSearchKeyword));
+                }
+
+                totalRecords = query.Count();
+                totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+
+                if (totalPages == 0) totalPages = 1;
+
+                if (currentPage > totalPages) currentPage = totalPages;
+                if (currentPage < 1) currentPage = 1;
+
+                var pagedData = query.OrderBy(x => x.MaSV) 
+                                     .Skip((currentPage - 1) * pageSize) 
+                                     .Take(pageSize) 
+                                     .ToList();
+
+                dgv_DSSV.DataSource = pagedData;
+                lblSoTrang.Text = $"Trang {currentPage} / {totalPages}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi tải dữ liệu: " + ex.Message);
+            }
         }
         public void LoadComboBoxLop()
         {
@@ -81,10 +141,6 @@ namespace QLSinhVien
         //Load dữ liệu lên combobox lớp
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<tbl_lophoc> dsLop = db.tbl_lophocs.ToList();
-            cboLop.DataSource = dsLop;
-            cboLop.DisplayMember = "TenLop";
-            cboLop.ValueMember = "MaLop";
         }
 
         private void cboLop_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,6 +221,51 @@ namespace QLSinhVien
                 {
                     MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadData();
+            }
+        }
+
+        private void btnDau_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage = 1;
+                LoadData();
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            currentSearchKeyword = txtTimKiem.Text.Trim();
+
+            currentPage = 1;
+
+            LoadData();
+        }
+
+        private void btnCuoi_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages)
+            {
+                currentPage = totalPages;
+                LoadData();
+            }
+        }
+
+        private void btnSau_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages)
+            {
+                currentPage++;
+                LoadData();
             }
         }
     }

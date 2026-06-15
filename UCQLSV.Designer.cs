@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pn_qlsv = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnSau = new System.Windows.Forms.Button();
+            this.btnCuoi = new System.Windows.Forms.Button();
+            this.btnDau = new System.Windows.Forms.Button();
+            this.btnTruoc = new System.Windows.Forms.Button();
+            this.lblSoTrang = new System.Windows.Forms.Label();
             this.dgv_DSSV = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,14 +70,14 @@
             // 
             // pn_qlsv
             // 
-            this.pn_qlsv.Controls.Add(this.textBox3);
+            this.pn_qlsv.Controls.Add(this.txtTimKiem);
             this.pn_qlsv.Controls.Add(this.btnTimKiem);
             this.pn_qlsv.Controls.Add(this.label5);
-            this.pn_qlsv.Controls.Add(this.button8);
-            this.pn_qlsv.Controls.Add(this.button9);
-            this.pn_qlsv.Controls.Add(this.button7);
-            this.pn_qlsv.Controls.Add(this.button6);
-            this.pn_qlsv.Controls.Add(this.label6);
+            this.pn_qlsv.Controls.Add(this.btnSau);
+            this.pn_qlsv.Controls.Add(this.btnCuoi);
+            this.pn_qlsv.Controls.Add(this.btnDau);
+            this.pn_qlsv.Controls.Add(this.btnTruoc);
+            this.pn_qlsv.Controls.Add(this.lblSoTrang);
             this.pn_qlsv.Controls.Add(this.dgv_DSSV);
             this.pn_qlsv.Controls.Add(this.btnLamMoi);
             this.pn_qlsv.Controls.Add(this.btnXoa);
@@ -89,12 +89,12 @@
             this.pn_qlsv.Size = new System.Drawing.Size(1177, 683);
             this.pn_qlsv.TabIndex = 0;
             // 
-            // textBox3
+            // txtTimKiem
             // 
-            this.textBox3.Location = new System.Drawing.Point(420, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(289, 22);
-            this.textBox3.TabIndex = 73;
+            this.txtTimKiem.Location = new System.Drawing.Point(420, 43);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(289, 22);
+            this.txtTimKiem.TabIndex = 73;
             // 
             // btnTimKiem
             // 
@@ -107,6 +107,7 @@
             this.btnTimKiem.TabIndex = 72;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label5
             // 
@@ -118,51 +119,55 @@
             this.label5.TabIndex = 71;
             this.label5.Text = "Tìm kiếm (Tên/Mã lớp/Lớp)";
             // 
-            // button8
+            // btnSau
             // 
-            this.button8.Location = new System.Drawing.Point(889, 625);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(53, 51);
-            this.button8.TabIndex = 35;
-            this.button8.Text = ">";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnSau.Location = new System.Drawing.Point(889, 625);
+            this.btnSau.Name = "btnSau";
+            this.btnSau.Size = new System.Drawing.Size(53, 51);
+            this.btnSau.TabIndex = 35;
+            this.btnSau.Text = ">";
+            this.btnSau.UseVisualStyleBackColor = true;
+            this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
             // 
-            // button9
+            // btnCuoi
             // 
-            this.button9.Location = new System.Drawing.Point(940, 625);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(53, 51);
-            this.button9.TabIndex = 34;
-            this.button9.Text = ">>";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnCuoi.Location = new System.Drawing.Point(940, 625);
+            this.btnCuoi.Name = "btnCuoi";
+            this.btnCuoi.Size = new System.Drawing.Size(53, 51);
+            this.btnCuoi.TabIndex = 34;
+            this.btnCuoi.Text = ">>";
+            this.btnCuoi.UseVisualStyleBackColor = true;
+            this.btnCuoi.Click += new System.EventHandler(this.btnCuoi_Click);
             // 
-            // button7
+            // btnDau
             // 
-            this.button7.Location = new System.Drawing.Point(500, 626);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(53, 51);
-            this.button7.TabIndex = 33;
-            this.button7.Text = "<<";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnDau.Location = new System.Drawing.Point(500, 626);
+            this.btnDau.Name = "btnDau";
+            this.btnDau.Size = new System.Drawing.Size(53, 51);
+            this.btnDau.TabIndex = 33;
+            this.btnDau.Text = "<<";
+            this.btnDau.UseVisualStyleBackColor = true;
+            this.btnDau.Click += new System.EventHandler(this.btnDau_Click);
             // 
-            // button6
+            // btnTruoc
             // 
-            this.button6.Location = new System.Drawing.Point(551, 626);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(53, 51);
-            this.button6.TabIndex = 32;
-            this.button6.Text = "<";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnTruoc.Location = new System.Drawing.Point(551, 626);
+            this.btnTruoc.Name = "btnTruoc";
+            this.btnTruoc.Size = new System.Drawing.Size(53, 51);
+            this.btnTruoc.TabIndex = 32;
+            this.btnTruoc.Text = "<";
+            this.btnTruoc.UseVisualStyleBackColor = true;
+            this.btnTruoc.Click += new System.EventHandler(this.button6_Click);
             // 
-            // label6
+            // lblSoTrang
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(710, 643);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 16);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Trang 1/1 | 3 bản ghi";
+            this.lblSoTrang.AutoSize = true;
+            this.lblSoTrang.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSoTrang.Location = new System.Drawing.Point(710, 643);
+            this.lblSoTrang.Name = "lblSoTrang";
+            this.lblSoTrang.Size = new System.Drawing.Size(127, 16);
+            this.lblSoTrang.TabIndex = 31;
+            this.lblSoTrang.Text = "Trang 1/1 | 3 bản ghi";
             // 
             // dgv_DSSV
             // 
@@ -434,11 +439,11 @@
         #endregion
 
         private System.Windows.Forms.Panel pn_qlsv;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnSau;
+        private System.Windows.Forms.Button btnCuoi;
+        private System.Windows.Forms.Button btnDau;
+        private System.Windows.Forms.Button btnTruoc;
+        private System.Windows.Forms.Label lblSoTrang;
         private System.Windows.Forms.DataGridView dgv_DSSV;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnXoa;
@@ -455,7 +460,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label5;
         private QLSinhVienDataSet qLSinhVienDataSet;
