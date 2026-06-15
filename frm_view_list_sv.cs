@@ -22,23 +22,18 @@ namespace QLSinhVien
 
         private void frm_view_list_sv_Load(object sender, EventArgs e)
         {
-            try
-            {
-                var dsToanBoSinhVien = db.tbl_sinhviens
-                                         .Select(x => new {
-                                             Mã_SV = x.MaSV,
-                                             Họ_Tên = x.HoTen,
-                                             Ngày_Sinh = x.NgaySinh,
-                                             Giới_Tính = x.GioiTinh,
-                                             Mã_Lớp = x.MaLop 
-                                         }).ToList();
-
-                dgvDssv.DataSource = dsToanBoSinhVien;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi khi tải danh sách: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //Load dữ liệu sinh viên vào DataGridView
+            var query = from sv in db.tbl_sinhviens
+                        join lop in db.tbl_lophocs on sv.MaLop equals lop.MaLop
+                        select new
+                        {
+                            sv.MaSV,
+                            sv.HoTen,
+                            sv.NgaySinh,
+                            sv.GioiTinh,
+                            sv.MaLop
+                        };
+            dgvDssv.DataSource = query.ToList();    
         }
 
         private void dgvDssv_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -36,7 +36,7 @@ namespace QLSinhVien
                 frm_main Frm_main = new frm_main();
                 this.Hide();
                 Frm_main.ShowDialog();
-                MessageBox.Show("Đăng nhập thành công.");
+                this.Close();
             }
             else
             {

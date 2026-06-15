@@ -42,6 +42,10 @@
             this.btnSau = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvQLLH = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCuoi = new System.Windows.Forms.Button();
@@ -53,10 +57,6 @@
             this.lblTrang = new System.Windows.Forms.Label();
             this.btnSuasv = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pm_qllh.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,6 +84,7 @@
             this.pm_qllh.Name = "pm_qllh";
             this.pm_qllh.Size = new System.Drawing.Size(1182, 686);
             this.pm_qllh.TabIndex = 63;
+            this.pm_qllh.Paint += new System.Windows.Forms.PaintEventHandler(this.pm_qllh_Paint);
             // 
             // groupBox1
             // 
@@ -223,6 +224,35 @@
             this.dgvQLLH.Size = new System.Drawing.Size(691, 477);
             this.dgvQLLH.TabIndex = 0;
             this.dgvQLLH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLLH_CellContentClick);
+            this.dgvQLLH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLLH_CellContentClick_1);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            // 
+            // MaLop
+            // 
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Mã lớp ";
+            this.MaLop.MinimumWidth = 6;
+            this.MaLop.Name = "MaLop";
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            this.TenLop.HeaderText = "Tên lớp ";
+            this.TenLop.MinimumWidth = 6;
+            this.TenLop.Name = "TenLop";
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.MinimumWidth = 6;
+            this.GhiChu.Name = "GhiChu";
             // 
             // btnLamMoi
             // 
@@ -344,34 +374,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            // 
-            // MaLop
-            // 
-            this.MaLop.DataPropertyName = "MaLop";
-            this.MaLop.HeaderText = "Mã lớp ";
-            this.MaLop.MinimumWidth = 6;
-            this.MaLop.Name = "MaLop";
-            // 
-            // TenLop
-            // 
-            this.TenLop.DataPropertyName = "TenLop";
-            this.TenLop.HeaderText = "Tên lớp ";
-            this.TenLop.MinimumWidth = 6;
-            this.TenLop.Name = "TenLop";
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.DataPropertyName = "GhiChu";
-            this.GhiChu.HeaderText = "Ghi chú";
-            this.GhiChu.MinimumWidth = 6;
-            this.GhiChu.Name = "GhiChu";
             // 
             // UCQLLH
             // 

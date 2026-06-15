@@ -112,7 +112,6 @@ namespace QLSinhVien
                     lh.TenLop = txtTenLop.Text.Trim();
                     lh.GhiChu = txtGhiChu.Text.Trim();
 
-                    // Lưu ý: Cố tình không cho sửa ID và MaLop vì nó ảnh hưởng đến khóa ngoại của bảng Sinh Viên
 
                     db.SubmitChanges();
                     MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -134,7 +133,6 @@ namespace QLSinhVien
         {
             if (e.RowIndex >= 0)
             {
-                // Chú ý: Đổi tên dgvQLLH thành đúng tên lưới của bạn (ví dụ dataGridView1)
                 DataGridViewRow row = dgvQLLH.Rows[e.RowIndex];
 
                 txtID.Text = row.Cells["ID"].Value?.ToString();
@@ -269,6 +267,16 @@ namespace QLSinhVien
         {
             frm_view_list_sv frmPopup = new frm_view_list_sv();
             frmPopup.ShowDialog();
+        }
+
+        private void dgvQLLH_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pm_qllh_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
