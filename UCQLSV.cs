@@ -12,7 +12,7 @@ namespace QLSinhVien
 {
     public partial class UCQLSV : UserControl
     {
-        dbQLSV db = new dbQLSV();
+        DataClasses1DataContext db = new DataClasses1DataContext();
 
         int pageSize = 2; 
         int currentPage = 1; 
